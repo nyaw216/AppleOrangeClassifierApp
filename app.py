@@ -74,8 +74,7 @@ CLASS_NAMES = {0: ("Apple", "🍎", "result-apple", "#E74C3C"),
                1: ("Orange", "🍊", "result-orange", "#E67E22")}
 
 # ── HEADER ─────────────────────────────────────────────────────────────────────
-st.title("🍎 vs 🍊 Apple & Orange Classifier")
-st.markdown("Klasifikasi gambar buah menggunakan **Custom CNN** yang dilatih dari nol pada dataset Apple vs Orange.")
+st.title("Apel🍎 atau Jeruk🍊?")
 st.divider()
 
 # ── LAYOUT: 2 KOLOM ────────────────────────────────────────────────────────────
@@ -84,7 +83,7 @@ left_col, right_col = st.columns([1.1, 1], gap="large")
 with left_col:
     st.subheader("📤 Upload Gambar")
     uploaded_file = st.file_uploader(
-        "Pilih file gambar buah",
+        "",
         type=["jpg", "jpeg", "png"],
         help="Upload foto apel atau jeruk. Pastikan buah terlihat jelas dan pencahayaan cukup."
     )
@@ -107,7 +106,7 @@ with right_col:
         • <b>Input:</b> 224 × 224 × 3 (RGB)<br>
         • <b>Output:</b> Sigmoid — binary classification<br>
         • <b>Kelas:</b> Apple (0) vs Orange (1)<br>
-        • <b>Dataset:</b> Apple vs Orange (LAS Week 2)
+        • <b>Dataset:</b> Apple vs Orange
         </div>
         """, unsafe_allow_html=True)
     else:
@@ -153,34 +152,5 @@ with right_col:
                       delta=None,
                       help="Probabilitas gambar adalah jeruk")
 
-# ── SIDEBAR ────────────────────────────────────────────────────────────────────
-with st.sidebar:
-    st.header("📋 Informasi Aplikasi")
-    st.markdown("""
-    **LAS Big Data 2026 — Week 5**
-    *Deployment Model*
-
-    **Model yang dipakai:**
-    - Arsitektur: Custom CNN
-    - Week 2 — Apple vs Orange
-    - Input size: 224 × 224
-
-    **Cara kerja:**
-    1. Upload foto buah
-    2. Model memproses gambar
-    3. Output: Apple atau Orange + confidence %
-
-    **Preprocessing:**
-    - Resize ke 224×224
-    - Normalisasi pixel /255.0
-    """)
-    st.divider()
-    st.markdown("""
-    *Dibuat oleh:*
-    **Naufal Hanif (2616)**
-    LAS Big Data MBC 2026
-    """)
-
 # ── FOOTER ─────────────────────────────────────────────────────────────────────
 st.divider()
-st.caption("🍎🍊 Apple vs Orange Classifier — LAS Big Data 2026 | Naufal Hanif | Week 5 Deployment")
